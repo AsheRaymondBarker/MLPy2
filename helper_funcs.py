@@ -18,9 +18,9 @@ def produce_scoring(model, data_pairs, data_pair_labels=None, threshold=0.5):
         ax[i].set_title(data_pair_labels[i])
 
 
-def plot_int_fico_heatmap(d):
-    int_rt = d["int_rt"]
-    fico = d["fico"]
+def plot_heatmap(d, attr1, attr2):
+    int_rt = d[attr1]
+    fico = d[attr2]
 
     heatmap, xedges, yedges = np.histogram2d(int_rt, fico, bins=1000)
     heatmap = gaussian_filter(heatmap, sigma=16)
