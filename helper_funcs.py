@@ -44,10 +44,10 @@ def plot_heatmap(d, attr1, attr2):
 
     scale_func = lambda a : 1/( 1+np.exp(-(7*a-4) ) )
 
-    cs = ax.contourf(X, Y, heatmap.T, levels=10, cmap="Greens")
+    cs = ax.contourf(X, Y, heatmap.T, levels=10, cmap="Blues")
 
     for i in range(2, len(levels), 2):
-        ax.contourf(Xd, Yd, heatmap2.T, levels=levels[i-2:i+1], colors="blue", alpha=scale_func((i)/7))
+        ax.contourf(Xd, Yd, heatmap2.T, levels=levels[i-2:i+1], colors="orange", alpha=scale_func((i)/7))
 
     ax.set_xlim((2,6))
     ax.set_ylim((600,820))
