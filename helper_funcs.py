@@ -17,6 +17,9 @@ def produce_scoring(model, data_pairs, data_pair_labels=None, threshold=0.5):
                                                 cmap="binary")
         ax[i].set_title(data_pair_labels[i])
 
+    plt.tight_layout()
+    plt.show()
+
 
 def plot_heatmap(d, attr1, attr2):
     int_rt = d[attr1]
